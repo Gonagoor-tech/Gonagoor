@@ -71,6 +71,8 @@ const Navbar: React.FC = () => {
   const navItems = [
     { title: "Services", path: "/services" },
     { title: "Research", path: "/research" },
+    { title: "Spinoffs", path: "/spinoffs" },
+    { title: "News & Events", path: "/news-events" },
     { title: "Careers", path: "/careers" },
     { title: "Contact", path: "/contact" }
   ];
@@ -84,7 +86,8 @@ const Navbar: React.FC = () => {
   const divisionItems = [
     { title: "Aerospace", path: "/aerospace", description: "Innovative aerospace systems and technologies" },
     { title: "AI", path: "/ai", description: "Cutting-edge artificial intelligence solutions" },
-    { title: "Software", path: "/software", description: "Custom software development services" }
+    { title: "Software", path: "/software", description: "Custom software development services" },
+    { title: "Mobility", path: "/mobility", description: "Sustainable electric transportation solutions" }
   ];
 
   const closeMenu = () => setIsMenuOpen(false);
