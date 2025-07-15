@@ -18,14 +18,14 @@ const AIPage = () => {
       icon: <Computer size={32} />,
       title: "Sudarshan.AI",
       description: "A groundbreaking LLM-based multimodal system that converts sound into video, exploring the synergy between auditory input and visual imagination.",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/Images/SUDARSHANA.jpg",
       color: "from-green-500/20 to-teal-500/20"
     },
     {
       icon: <Cpu size={32} />,
       title: "Custom AI Development",
       description: "Specialized AI solutions tailored to industry-specific challenges, from NLP chatbots to machine vision for quality inspection.",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/Images/CD.png",
       color: "from-orange-500/20 to-red-500/20"
     },
     {
@@ -45,7 +45,7 @@ const AIPage = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-blue-50/30 -z-10"></div>
           
           <SectionHeading
-            title="Artificial Intelligence Division"
+            title="AI Division"
             subtitle="Bringing intelligence to machines — and meaning to data."
             centered={true}
           />
@@ -128,7 +128,9 @@ const AIPage = () => {
                 GonagoorTech offers comprehensive AI development services from initial concept to deployment and beyond. 
                 Our team of AI engineers, data scientists, and researchers are ready to support your most ambitious projects.
               </p>
+              <a href="/contact">
               <Button size="lg">Schedule a consultation</Button>
+              </a>
             </div>
             <div className="md:w-1/2 order-1 md:order-2 flex justify-center">
               <div className="relative w-full max-w-md aspect-square rounded-xl overflow-hidden shadow-lg">

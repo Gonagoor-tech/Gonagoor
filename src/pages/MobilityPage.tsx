@@ -14,26 +14,7 @@ const MobilityPage: React.FC = () => {
   ];
 
   const features = [
-    {
-      title: 'Campus Travel',
-      description: 'Perfect for students and faculty navigating large university campuses efficiently and sustainably.',
-      icon: '🎓'
-    },
-    {
-      title: 'Tech Parks',
-      description: 'Ideal for professionals commuting within technology parks and corporate complexes.',
-      icon: '💼'
-    },
-    {
-      title: 'Retail Access',
-      description: 'Convenient transportation for retail workers and customers in commercial areas.',
-      icon: '🛍️'
-    },
-    {
-      title: 'Eco-Friendly',
-      description: 'Zero emissions transportation solution contributing to a cleaner environment.',
-      icon: '🌱'
-    }
+    // Add features here if needed in the future
   ];
 
   return (
@@ -42,10 +23,11 @@ const MobilityPage: React.FC = () => {
         {/* Hero Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8">
+            {/* Modified grid: text takes 1 column, image takes 2 columns on large screens */}
+            <div className="grid lg:grid-cols-3 gap-12 items-center">
+              <div className="space-y-8 lg:col-span-1"> {/* Text content occupies 1 column */}
                 <div className="space-y-4">
-                  <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                  <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-6">
                     GO VV
                   </h1>
                   <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -55,30 +37,28 @@ const MobilityPage: React.FC = () => {
                     Ride Smart, Live Better
                   </p>
                 </div>
-                
+
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Introducing the GO VV Campus Rider - an innovative electric bicycle designed to revolutionize 
-                  urban mobility. Our mission is to provide affordable, sustainable transportation solutions 
+                  Introducing the GO VV Campus Rider - an innovative electric bicycle designed to revolutionize
+                  urban mobility. Our mission is to provide affordable, sustainable transportation solutions
                   for campuses, tech parks, and retail environments.
                 </p>
-                
+
                 <div className="flex flex-wrap gap-4">
                   <Button size="lg" className="group">
                     Learn More
                     <Zap size={16} className="ml-2 group-hover:scale-110 transition-transform" />
                   </Button>
-                  <Button size="lg" variant="outline">
-                    Contact Sales
-                  </Button>
                 </div>
               </div>
-              
-              <div className="flex justify-center">
+
+              {/* Image content now spans 2 columns on large screens */}
+              <div className="flex justify-center lg:col-span-2">
                 <div className="relative">
                   <img
-                    src="/lovable-uploads/c48d8911-e18d-4191-8a9b-d2a8c0c9aced.png"
+                    src="/Images/01.png"
                     alt="GO VV Electric Bicycle"
-                    className="w-full max-w-lg h-auto object-contain"
+                    className="w-full h-auto object-contain" // w-full will make it fill the new wider column
                   />
                   <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-green-500 to-blue-500 rounded-full blur-xl opacity-30 animate-pulse" />
                 </div>
@@ -96,12 +76,12 @@ const MobilityPage: React.FC = () => {
                 Engineered for comfort, efficiency, and reliability in urban environments.
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {specifications.map((spec, index) => {
                 const IconComponent = spec.icon;
                 return (
-                  <div 
+                  <div
                     key={spec.label}
                     className="bg-card p-6 rounded-xl border border-border hover:shadow-lg transition-all duration-300 hover:scale-105"
                   >
@@ -120,41 +100,13 @@ const MobilityPage: React.FC = () => {
             </div>
           </div>
         </section>
-
-        {/* Use Cases Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-foreground mb-4">Perfect for Every Journey</h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Designed to meet the diverse transportation needs of modern urban environments.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => (
-                <div 
-                  key={feature.title}
-                  className="text-center group"
-                >
-                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Additional Specifications */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/50">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-foreground mb-4">Technical Specifications</h2>
             </div>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-card p-6 rounded-xl border border-border">
                 <h3 className="font-semibold text-foreground mb-4">Power & Control</h3>
@@ -173,7 +125,7 @@ const MobilityPage: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-card p-6 rounded-xl border border-border">
                 <h3 className="font-semibold text-foreground mb-4">Frame & Wheels</h3>
                 <div className="space-y-3 text-sm">
@@ -191,7 +143,7 @@ const MobilityPage: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-card p-6 rounded-xl border border-border">
                 <h3 className="font-semibold text-foreground mb-4">Safety & Features</h3>
                 <div className="space-y-3 text-sm">
@@ -223,13 +175,11 @@ const MobilityPage: React.FC = () => {
               Join the electric revolution with GO VV Campus Rider - affordable, sustainable, and smart.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="group">
-                Get Quote
-                <Zap size={16} className="ml-2 group-hover:scale-110 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline">
-                Schedule Demo
-              </Button>
+              <a href="/contact">
+                <Button size="lg" variant="outline">
+                  Schedule Demo
+                </Button>
+              </a>
             </div>
           </div>
         </section>

@@ -32,7 +32,7 @@ const CareerPage = () => {
 
   return (
     <PageLayout>
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 pt-28 pb-12">
         <SectionHeading 
           title="Join Our Team" 
           subtitle="At GonagoorTech, we're looking for passionate individuals who want to shape the future of technology. Explore our current openings and find your perfect role."

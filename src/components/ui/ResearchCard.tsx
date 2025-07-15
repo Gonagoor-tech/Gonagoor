@@ -1,4 +1,3 @@
-
 import React from "react";
 import { cn } from "@/lib/utils";
 
@@ -7,7 +6,7 @@ interface ResearchCardProps {
   description: string;
   icon?: React.ReactNode;
   className?: string;
-  style?: React.CSSProperties;
+  color: string; // Add color prop for background gradient
 }
 
 const ResearchCard: React.FC<ResearchCardProps> = ({
@@ -15,21 +14,28 @@ const ResearchCard: React.FC<ResearchCardProps> = ({
   description,
   icon,
   className,
-  style,
+  color,
 }) => {
   return (
-    <div 
+    <div
       className={cn(
-        "glass rounded-xl p-6 transition-all duration-300 hover:shadow-xl hover:translate-y-[-5px] border-t-4 border-primary",
+        "relative rounded-xl p-6 transition-all duration-300 hover:shadow-xl hover:translate-y-[-5px] overflow-hidden",
+        `bg-gradient-to-br ${color}`, // Use color prop for background gradient
         className
       )}
-      style={style}
     >
-      {icon && (
-        <div className="mb-4 text-primary">{icon}</div>
-      )}
-      <h3 className="text-xl font-medium mb-3">{title}</h3>
-      <p className="text-muted-foreground">{description}</p>
+      {/* Optional: Add a subtle overlay for depth */}
+      <div className="absolute inset-0 bg-black/5 rounded-xl"></div>
+
+      <div className="relative z-10">
+        {icon && (
+          <div className="mb-4 text-primary-foreground"> {/* Icon color adjusted for better contrast */}
+            {icon}
+          </div>
+        )}
+        <h3 className="text-xl font-semibold mb-3 text-foreground">{title}</h3>
+        <p className="text-muted-foreground leading-relaxed">{description}</p>
+      </div>
     </div>
   );
 };

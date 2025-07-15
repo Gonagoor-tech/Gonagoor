@@ -1,9 +1,8 @@
-
-import React from 'react';
+import React from 'react'; // Ensure React is imported for React.ReactNode
 import { cn } from '@/lib/utils';
 
 interface SectionHeadingProps {
-  title: string;
+  title: React.ReactNode; // Changed from 'string' to 'React.ReactNode'
   subtitle?: string;
   centered?: boolean;
   className?: string;
@@ -18,22 +17,23 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
   subtitleClassName,
 }) => {
   return (
-    <div className={cn("mb-12", centered && "text-center", className)}>
-      <div className="relative inline-block">
-        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 relative z-10 bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
-          {title}
-        </h2>
-        <span className="absolute -bottom-2 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-300 to-orange-400 rounded-full transform transition-transform duration-300 group-hover:scale-x-110"></span>
-        <img 
-          src="/lovable-uploads/2eff5a32-1f8a-4322-9f1a-38ae1d2354b8.png" 
-          alt="GonagoorTech Logo" 
-          className="absolute -right-10 -top-5 w-8 h-8 opacity-70 animate-bounce-slow"
-        />
+    <div className={cn(
+      "mb-12",
+      centered && "text-center",
+      "max-w-4xl mx-auto", // Combined max-w-4xl and mx-auto for cleaner centering
+      className
+    )}>
+      <div className="relative inline-block group"> {/* Added 'group' class for hover effect on underline */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-tight mb-4"> {/* Adjusted text sizes, leading, and bottom margin */}
+              {title}
+            </h1>
+        {/* Underline for the title, now part of a group hover effect */}
+        <span className="absolute -bottom-2 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-300 to-orange-400 rounded-full transform scale-x-75 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span> {/* Initial scale-x-75, then expands on hover */}
       </div>
       {subtitle && (
         <p className={cn(
-          "text-gray-600 max-w-3xl text-lg mt-6 leading-relaxed", 
-          centered && "mx-auto", 
+          "text-lg mt-6 leading-relaxed text-muted-foreground", // Using text-muted-foreground for better theme integration
+          "max-w-3xl mx-auto", // Ensure subtitle is centered and has a max-width
           subtitleClassName
         )}>
           {subtitle}

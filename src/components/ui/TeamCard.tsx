@@ -1,23 +1,23 @@
-
-import React from "react";
-import { cn } from "@/lib/utils";
-import { Linkedin, Mail } from "lucide-react";
-import { Card, CardContent } from "./card";
-import { AspectRatio } from "./aspect-ratio";
-import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
+import React from 'react';
+import { cn } from '@/lib/utils';
+import { Linkedin, Mail } from 'lucide-react'; // Assuming you use Mail for email
 
 interface TeamCardProps {
   name: string;
   role: string;
-  bio?: string;
-  description?: string;
-  imageSrc?: string;
-  className?: string;
-  style?: React.CSSProperties;
+  description: string;
   socialLinks?: {
     linkedin?: string;
     email?: string;
   };
+  imageSrc: string;
+  // New props for conditional styling based on context
+  isLeaderCard?: boolean;
+  isAdvisoryCard?: boolean;
+  // This prop was from original code, kept for compatibility if needed.
+  // It determines if the card's content is 'visible' (e.g., for animations).
+  // I've removed direct usage of 'visible' in TeamPage, but kept it here
+  // in case you have other animation logic.
   visible?: boolean;
 }
 
@@ -25,86 +25,98 @@ const TeamCard: React.FC<TeamCardProps> = ({
   name,
   role,
   description,
-  imageSrc = "/placeholder.svg",
-  className,
-  style,
   socialLinks,
-  visible = true,
+  imageSrc,
+  isLeaderCard = false,
+  isAdvisoryCard = false,
+  visible = true, // Default to true if not specified
 }) => {
-  if (!visible) return null;
-  
-  const initials = name
-    .split(" ")
-    .map(n => n[0])
-    .join("")
-    .toUpperCase();
-  
   return (
-    <Card 
+    <div
       className={cn(
-        "overflow-hidden h-full",
-        "bg-white border border-gray-100 shadow-sm",
-        "hover:shadow-md hover:border-primary/20 transition-all duration-300",
-        className
+        "relative rounded-xl overflow-hidden shadow-lg border border-border/60 transition-all duration-300",
+        "bg-card backdrop-blur-sm", // Apply card background and blur
+        // Hover effect for all cards
+        "group hover:shadow-xl hover:border-primary/50",
+        // Conditional styling for Leader Cards
+        isLeaderCard && "lg:col-span-1 p-6 sm:p-8 transform scale-100 hover:scale-[1.03] shadow-xl hover:shadow-2xl", // Make leader cards slightly larger/more prominent
+        // Conditional styling for Advisory Cards (optional, could be subtle)
+        isAdvisoryCard && "hover:shadow-lg", // Advisory might have a more subtle hover
+        // Base padding, overridden by leader card if applicable
+        !isLeaderCard && "p-4 sm:p-6",
+        // General visibility control (if you plan to animate visibility)
+        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4' // Example for animate-fade-in
       )}
-      style={style}
     >
-      <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100/50">
-        <AspectRatio ratio={1} className="w-full">
-          {imageSrc ? (
-            <img
-              src={imageSrc}
-              alt={`${name} - ${role}`}
-              className="object-cover w-full h-full"
-              loading="lazy"
-            />
-          ) : (
-            <Avatar className="w-full h-full rounded-none">
-              <AvatarImage src={imageSrc} alt={name} />
-              <AvatarFallback className="text-4xl bg-primary/5 text-primary/70 rounded-none">
-                {initials}
-              </AvatarFallback>
-            </Avatar>
-          )}
-        </AspectRatio>
-      </div>
-      
-      <CardContent className="p-4 text-center">
-        <h3 className="font-semibold text-base mb-1 text-gray-900">{name}</h3>
-        <p className="text-primary/90 text-xs font-medium mb-2">{role}</p>
-        
-        {description && (
-          <p className="text-xs text-gray-600 mt-2 line-clamp-3 leading-relaxed">
-            {description}
-          </p>
-        )}
-        
+      {/* Background Gradient / Overlay for leader/advisory cards */}
+      {isLeaderCard && (
+        <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+      )}
+      {isAdvisoryCard && (
+        <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+      )}
+
+      <div className="relative z-10 flex flex-col items-center text-center">
+        {/* Image */}
+        <div className={cn(
+          "relative w-28 h-28 rounded-full overflow-hidden mb-4 border-4 border-primary/20",
+          isLeaderCard && "w-36 h-36 border-primary", // Larger border for leaders
+          "transition-all duration-300 group-hover:scale-105"
+        )}>
+          <img
+            src={imageSrc}
+            alt={name}
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
+
+        {/* Name and Role */}
+        <h3 className="text-xl sm:text-2xl font-semibold text-foreground leading-tight mb-1">
+          {name}
+        </h3>
+        <p className={cn(
+          "text-sm text-muted-foreground mb-3",
+          isLeaderCard && "text-primary/80 font-medium" // Emphasize leader roles
+        )}>
+          {role}
+        </p>
+
+        {/* Description (slightly smaller for regular cards) */}
+        <p className={cn(
+          "text-sm text-muted-foreground leading-relaxed",
+          isLeaderCard && "text-base", // Larger description for leaders
+          "mb-4"
+        )}>
+          {description}
+        </p>
+
+        {/* Social Links */}
         {socialLinks && (
-          <div className="flex justify-center space-x-3 mt-3 pt-2 border-t border-gray-100">
+          <div className="flex gap-3 justify-center mt-auto pt-2"> {/* mt-auto pushes links to bottom if cards vary in height */}
             {socialLinks.linkedin && (
-              <a 
-                href={socialLinks.linkedin} 
-                aria-label="LinkedIn" 
-                className="text-gray-400 hover:text-primary transition-colors"
-                target="_blank" 
+              <a
+                href={socialLinks.linkedin}
+                target="_blank"
                 rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                aria-label={`${name}'s LinkedIn`}
               >
-                <Linkedin size={16} />
+                <Linkedin size={20} />
               </a>
             )}
             {socialLinks.email && (
-              <a 
-                href={`mailto:${socialLinks.email}`} 
-                aria-label="Email" 
-                className="text-gray-400 hover:text-primary transition-colors"
+              <a
+                href={`mailto:${socialLinks.email}`}
+                className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                aria-label={`Email ${name}`}
               >
-                <Mail size={16} />
+                <Mail size={20} />
               </a>
             )}
           </div>
         )}
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 };
 

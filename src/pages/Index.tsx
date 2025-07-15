@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import PageLayout from '@/components/layout/PageLayout';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -120,55 +119,69 @@ const Index = () => {
     <PageLayout>
       <Hero />
 
-      <section className="py-20 bg-secondary/50">
+      <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
-          <SectionHeading 
-            title="What We Offer" 
-            subtitle="We provide innovative technology solutions that make a difference"
-            className="scroll-trigger"
-          />
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">What We Offer</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              We provide innovative technology solutions that make a difference
+            </p>
+          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="scroll-trigger" style={{ transitionDelay: `${index * 100}ms` }}>
-                <ServiceCard 
-                  title={service.title}
-                  description={service.description}
-                  icon={service.icon}
-                />
+              <div 
+                key={index} 
+                className="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-100"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
           
-          <div className="mt-12 text-center scroll-trigger">
-            <Button to="/services" variant="outline" size="lg">
+          <div className="mt-12 text-center">
+            <Button 
+              to="/services" 
+              variant="outline" 
+              size="lg"
+              className="rounded-full px-8 border-slate-300 hover:bg-slate-100"
+            >
               Explore All Services
-              <ArrowRight className="w-4 h-4 ml-1" />
+              <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-b from-background to-primary/5">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <SectionHeading 
-            title="Recent Innovations" 
-            subtitle="Breakthrough technologies from our divisions"
-            className="scroll-trigger"
-          />
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Recent Innovations</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Breakthrough technologies from our divisions
+            </p>
+          </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {innovations.map((item, index) => (
               <div 
                 key={index} 
-                className="scroll-trigger bg-white p-6 rounded-lg shadow-sm border border-primary/10 text-center hover:shadow-md transition-shadow hover:translate-y-[-4px] duration-300"
+                className="group relative bg-slate-50 p-6 rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 border border-slate-100"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-4 shadow-sm group-hover:shadow-md transition-shadow">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
+                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
+                
+                {/* Decorative circle */}
+                <div className="absolute top-4 right-4 w-3 h-3 bg-primary/20 rounded-full"></div>
               </div>
             ))}
           </div>
@@ -216,94 +229,83 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
-          <SectionHeading 
-            title="Our Technology Focus" 
-            subtitle="Cutting-edge technologies we work with"
-            className="scroll-trigger"
-          />
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Technology Focus</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Cutting-edge technologies we work with
+            </p>
+          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
-            <div className="scroll-trigger flex flex-col space-y-6">
-              <div className="flex items-start">
-                <div className="mr-4 p-3 bg-primary/10 rounded-lg">
-                  <Zap className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">AI & Machine Learning</h3>
-                  <p className="text-muted-foreground">Developing intelligent systems that can learn, adapt and provide valuable insights for business decisions.</p>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                <Zap className="w-6 h-6 text-primary" />
               </div>
-              
-              <div className="flex items-start">
-                <div className="mr-4 p-3 bg-primary/10 rounded-lg">
-                  <Globe className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">Cloud-Native Applications</h3>
-                  <p className="text-muted-foreground">Building scalable, resilient applications designed to leverage the full potential of cloud platforms.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="mr-4 p-3 bg-primary/10 rounded-lg">
-                  <Code className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">Enterprise Software</h3>
-                  <p className="text-muted-foreground">Custom enterprise solutions that streamline operations and boost productivity.</p>
-                </div>
-              </div>
+              <h3 className="text-lg font-semibold mb-3">AI & Machine Learning</h3>
+              <p className="text-slate-600">Developing intelligent systems that can learn, adapt and provide valuable insights for business decisions.</p>
             </div>
             
-            <div className="scroll-trigger flex flex-col space-y-6">
-              <div className="flex items-start">
-                <div className="mr-4 p-3 bg-primary/10 rounded-lg">
-                  <Rocket className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">Aerospace Technology</h3>
-                  <p className="text-muted-foreground">Advanced systems and software for aviation, space exploration, and satellite technologies.</p>
-                </div>
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                <Globe className="w-6 h-6 text-primary" />
               </div>
-              
-              <div className="flex items-start">
-                <div className="mr-4 p-3 bg-primary/10 rounded-lg">
-                  <Shield className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">Cybersecurity</h3>
-                  <p className="text-muted-foreground">Protecting digital assets with robust security solutions and best practices.</p>
-                </div>
+              <h3 className="text-lg font-semibold mb-3">Cloud-Native Applications</h3>
+              <p className="text-slate-600">Building scalable, resilient applications designed to leverage the full potential of cloud platforms.</p>
+            </div>
+            
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                <Code className="w-6 h-6 text-primary" />
               </div>
-              
-              <div className="flex items-start">
-                <div className="mr-4 p-3 bg-primary/10 rounded-lg">
-                  <Brain className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">Research & Development</h3>
-                  <p className="text-muted-foreground">Continuous innovation through dedicated R&D to stay ahead of technological trends.</p>
-                </div>
+              <h3 className="text-lg font-semibold mb-3">Enterprise Software</h3>
+              <p className="text-slate-600">Custom enterprise solutions that streamline operations and boost productivity.</p>
+            </div>
+            
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                <Rocket className="w-6 h-6 text-primary" />
               </div>
+              <h3 className="text-lg font-semibold mb-3">Aerospace Technology</h3>
+              <p className="text-slate-600">Advanced systems and software for aviation, space exploration, and satellite technologies.</p>
+            </div>
+            
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                <Shield className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold mb-3">Cybersecurity</h3>
+              <p className="text-slate-600">Protecting digital assets with robust security solutions and best practices.</p>
+            </div>
+            
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                <Brain className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold mb-3">Research & Development</h3>
+              <p className="text-slate-600">Continuous innovation through dedicated R&D to stay ahead of technological trends.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-primary/5">
+      <section className="py-20 bg-black text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center scroll-trigger">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-6 font-poppins">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Transform Your Ideas Into Reality?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
               Partner with GonagoorTech to create innovative solutions that drive real impact.
               Let's build something amazing together.
             </p>
-            <Button to="/contact" size="lg">
-              Get Started Today
+            <Button 
+              to="/contact" 
+              size="lg"
+              className="bg-white text-black hover:bg-slate-100 px-8 py-3 rounded-none font-medium"
+            >
+              GET STARTED TODAY
             </Button>
           </div>
         </div>

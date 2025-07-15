@@ -1,6 +1,5 @@
-
 import React from "react";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Linkedin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
@@ -8,20 +7,18 @@ const Footer: React.FC = () => {
   
   const quickLinks = [
     { name: "Services", path: "/services" },
-    { name: "Team", path: "/team" },
     { name: "Portfolio", path: "/portfolio" },
     { name: "Research", path: "/research" },
     { name: "Vision", path: "/vision" },
+    { name: "Spinoffs", path: "/spinoffs" },
     { name: "Contact", path: "/contact" }
   ];
   
-  const serviceLinks = [
-    { name: "Innovation & R&D", path: "/services" },
-    { name: "Software Product Development", path: "/services" },
-    { name: "Startup Consulting", path: "/services" },
-    { name: "Process Management", path: "/services" },
-    { name: "Skill Training", path: "/services" },
-    { name: "Academic Relations", path: "/services" }
+  const divisionLinks = [
+    { name: "AI", path: "/ai" },
+    { name: "Software", path: "/software" },
+    { name: "Mobility", path: "/mobility" },
+    { name: "Aerospace", path: "/aerospace" }
   ];
 
   return (
@@ -66,9 +63,9 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-base font-semibold mb-4 text-white">Services</h3>
+            <h3 className="text-base font-semibold mb-4 text-white">Divisions</h3>
             <ul className="space-y-2 text-sm">
-              {serviceLinks.map((link) => (
+              {divisionLinks.map((link) => (
                 <li key={link.name}>
                   <Link 
                     to={link.path}
@@ -93,10 +90,32 @@ const Footer: React.FC = () => {
               <li className="flex items-center">
                 <Mail className="mr-2 h-4 w-4 text-primary flex-shrink-0" />
                 <a 
-                  href="mailto:writetous@gonagoor.com" 
+                  href="mailto:writetous@gonagoortech.com" 
                   className="text-white/70 hover:text-white transition-colors"
                 >
-                  writetous@gonagoor.com
+                  writetous@gonagoortech.com
+                </a>
+              </li>
+              <li className="flex items-center">
+                <Linkedin className="mr-2 h-4 w-4 text-primary flex-shrink-0" />
+                <a 
+                  href="https://www.linkedin.com/company/gonagoor-technology-solutions" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-white transition-colors"
+                >
+                  LinkedIn
+                </a>
+              </li>
+              <li className="flex items-center">
+                <Instagram className="mr-2 h-4 w-4 text-primary flex-shrink-0" />
+                <a 
+                  href="https://www.instagram.com/gonagoor_tech/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-white transition-colors"
+                >
+                  Instagram
                 </a>
               </li>
             </ul>

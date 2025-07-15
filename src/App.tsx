@@ -24,7 +24,8 @@ import SkycubePage from "./pages/SkycubePage";
 import VayuDroidPage from "./pages/VayuDroidPage";
 import SpinoffsPage from "./pages/SpinoffsPage";
 import MobilityPage from "./pages/MobilityPage";
-import NewsAndEventsPage from "./pages/NewsAndEventsPage";
+import PatentsPage from "./pages/PatentsPage";
+
 
 const queryClient = new QueryClient();
 
@@ -54,7 +55,7 @@ const App = () => (
           <Route path="/mobility" element={<MobilityPage />} />
           <Route path="/vision" element={<VisionPage />} />
           <Route path="/spinoffs" element={<SpinoffsPage />} />
-          <Route path="/news-events" element={<NewsAndEventsPage />} />
+          <Route path="/patents" element={<PatentsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/careers" element={<CareerPage />} />
           <Route path="*" element={<NotFound />} />
