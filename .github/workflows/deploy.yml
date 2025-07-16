@@ -19,6 +19,9 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+
+      - name: Add server to known_hosts
+        run: |
           ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
 
       - name: Build (if needed)
@@ -31,3 +34,4 @@ jobs:
           rsync -avz --delete \
             -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=yes" \
             ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/
+
