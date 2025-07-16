@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/layout/PageLayout';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -38,6 +37,7 @@ const AerospacePage = () => {
       <div className="container mx-auto px-4">
         <section className="py-12 md:py-20 relative">
           {/* Background elements */}
+          {/* FIX: Moved z-10 from the background div to ensure it's behind content */}
           <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/30 -z-10"></div>
           
           <SectionHeading
@@ -146,7 +146,8 @@ const AerospacePage = () => {
                 concept to launch and beyond. Our team of aerospace engineers, physicists, and 
                 computer scientists are ready to support your most ambitious projects.
               </p>
-              <Button size="lg">Schedule a consultation</Button>
+              <a href='/contact'>
+              <Button size="lg">Schedule a consultation</Button></a>
             </div>
             <div className="md:w-1/2 order-1 md:order-2 flex justify-center">
               <div className="relative w-full max-w-md aspect-square">

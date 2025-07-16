@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="p-4 bg-white/5 rounded-lg backdrop-blur-sm text-white/80 text-xs">
               <p className="font-medium text-white mb-2">Registration:</p>
-              <p>Udyam Number: UDYAM-KR-03-0464348</p> 
+              <p>CIN Number: U62099KA2025PTC202184</p> 
               <p>GST No: 29AWPPP8448J1ZH</p>
             </div>
           </div>
@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
                   href="mailto:writetous@gonagoortech.com" 
                   className="text-white/70 hover:text-white transition-colors"
                 >
-                  writetous@gonagoortech.com
+                  writetous@gonagoor.com
                 </a>
               </li>
               <li className="flex items-center">

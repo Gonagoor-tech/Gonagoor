@@ -187,16 +187,7 @@ const Index = () => {
           </div>
           
           <div className="mt-10 text-center scroll-trigger relative">
-            <button
-              ref={setReferenceElement}
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-md bg-background text-foreground border border-input hover:bg-accent hover:text-accent-foreground hover:border-accent/50 transition-all shadow hover:shadow-md text-sm font-medium"
-              onClick={() => setShowDivisionsDropdown(!showDivisionsDropdown)}
-            >
-              Explore Our Divisions
-              <ChevronDown 
-                className={`w-4 h-4 ml-1 transition-transform ${showDivisionsDropdown ? 'transform rotate-180' : ''}`} 
-              />
-            </button>
+            
             
             {showDivisionsDropdown && (
               <div

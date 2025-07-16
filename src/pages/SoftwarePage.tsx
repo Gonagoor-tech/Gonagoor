@@ -128,7 +128,8 @@ const SoftwarePage = () => {
                 GonagoorTech delivers end-to-end software development services from initial concept to deployment and support. 
                 Our team of expert developers, designers, and project managers are ready to transform your ideas into reality.
               </p>
-              <Button size="lg">Schedule a consultation</Button>
+              <a href='/contact'>
+              <Button size="lg">Schedule a consultation</Button></a>
             </div>
             <div className="md:w-1/2 order-1 md:order-2 flex justify-center">
               <div className="relative w-full max-w-md aspect-square rounded-xl overflow-hidden shadow-lg">

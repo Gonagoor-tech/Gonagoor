@@ -44,7 +44,7 @@ const coreTeam = [
     role: "Nirvaahak - Akendra Kriya",
     description: "Specializes in DevOps, ensuring applications scale efficiently to desired limits.",
     socialLinks: {
-      linkedin: "https://www.linkedin.com/in/mikkin-km-72aa86230/"
+      linkedin: "https://www.linkedin.com/in/mikkin-k-m-72aa86230/"
     },
     imageSrc: "/Team/Mikkin.jpeg"
   },
@@ -128,15 +128,6 @@ const coreTeam = [
       linkedin: "https://www.linkedin.com/in/ananth-m-athreya-963262287/"
     },
     imageSrc: "/Team/Ananth.jpeg"
-  },
-  {
-    name: "Chetan Joshi",
-    role: "Nirvaahak - Basha Kriya",
-    description: " Chethan builds systems that enable computers to understand, interpret, and generate human language.",
-    socialLinks: {
-      linkedin: "www.linkedin.com/in/chetan-n-joshi"
-    },
-    imageSrc: "/Team/Chethan.jpeg" // Still using RahulM's image, please verify/replace if Chethan has a dedicated image
   }
 ];
 

@@ -203,10 +203,12 @@ const SpinoffsPage: React.FC = () => {
               We are always seeking visionary partners to join us in shaping the next generation of technology. 
               Reach out to explore how we can build the future together.
             </p>
+            <a href='/contact'>
             <Button size="lg" className="group px-8 py-3 text-lg font-semibold bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 transition-all duration-300">
               Get in Touch
               <ArrowRight size={20} className="ml-3 group-hover:translate-x-2 transition-transform" />
             </Button>
+            </a>
           </div>
         </section>
       </div>
