@@ -14,6 +14,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+        - name: Debug SSH key and connectivity
+  run: |
+    echo "Private key has $(wc -l < ~/.ssh/id_rsa) lines"
+    ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -vvv \
+      ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+      echo SSH_OK || echo SSH_FAILED
+
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh
