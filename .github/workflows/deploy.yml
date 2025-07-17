@@ -1,5 +1,4 @@
 name: Auto Deploy to ACE Cloud
-
 on:
   push:
     branches: [master]
@@ -9,25 +8,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
-      - name: Setup SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+    - name: Set up SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
 
-      - name: Build
-        run: |
-          npm ci
-          npm run build
+    - name: Add server to known_hosts
+      run: ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
 
-      - name: Deploy via rsync
-        run: |
-          rsync -avz --delete \
-            -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=yes" \
-            ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/deploy/target/dist/
+    - name: Build
+      run: |
+        npm ci
+        npm run build
 
-
+    - name: Deploy via rsync
+      run: |
+        rsync -avz --delete \
+          -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=yes" \
+          ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/deploy/website-react/dist/
 
