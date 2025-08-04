@@ -94,17 +94,10 @@ const ContactPage = () => {
                     <div>
                       <h4 className="font-semibold text-lg text-foreground mb-1">Email Us</h4>
                       <a
-<<<<<<< HEAD
                         href="mailto:writetous@gonagoor.com"
                         className="text-primary hover:underline font-medium transition-colors text-lg"
                       >
                         writetous@gonagoor.com
-=======
-                        href="mailto:writetous@gonagoortech.com"
-                        className="text-primary hover:underline font-medium transition-colors text-lg"
-                      >
-                        writetous@gonagoortech.com
->>>>>>> 55cf3668db6514f707d3e2f3f46594e40a653fa1
                       </a>
                     </div>
                   </div>
@@ -115,13 +108,9 @@ const ContactPage = () => {
                       <Building2 className="w-6 h-6 text-primary flex-shrink-0" /> Registration Details
                     </h4>
                     <p className="text-muted-foreground mb-1">
-<<<<<<< HEAD
                       <span className="font-medium text-foreground">CIN Number:</span> U62099KA2025PTC202184
 
 
-=======
-                      <span className="font-medium text-foreground">Udyam Number:</span> UDYAM-KR-03-0464348
->>>>>>> 55cf3668db6514f707d3e2f3f46594e40a653fa1
                     </p>
                     <p className="text-muted-foreground">
                       <span className="font-medium text-foreground">GST No:</span> 29AWPPP8448J1ZH
@@ -169,11 +158,7 @@ const ContactPage = () => {
                       type="email"
                       required
                       className="w-full px-5 py-3 border border-border rounded-lg bg-input focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200 placeholder:text-muted-foreground"
-<<<<<<< HEAD
                       placeholder="Enter your e-mail"
-=======
-                      placeholder="user@example.com"
->>>>>>> 55cf3668db6514f707d3e2f3f46594e40a653fa1
                     />
                   </div>
 

@@ -54,11 +54,7 @@ const researchProjects = [
     title: "Precision Sensor Design",
     description: "Design of precision sensors for usage in medical and multiple fields.",
     
-<<<<<<< HEAD
     color: "from-black-500/20 to-gray-500/20"
-=======
-    color: "from-yellow-500/20 to-orange-500/20"
->>>>>>> 55cf3668db6514f707d3e2f3f46594e40a653fa1
   },
   {
     icon: <Monitor className="w-6 h-6" />,
@@ -73,7 +69,6 @@ const researchProjects = [
     description: "Research to help seniors adapt easily to the digital world and help them understand complex interactions with simple movements using joysticks.",
     
     color: "from-rose-500/20 to-pink-500/20"
-<<<<<<< HEAD
   },
   {
     icon: <Lightbulb className="w-6 h-6" />,
@@ -95,8 +90,6 @@ const researchProjects = [
     description: "Tracing the path for satellite enabled low bandwidth and secure high speed data transmissions.",
     
     color: "from-purple-500/20 to-pink-500/20"
-=======
->>>>>>> 55cf3668db6514f707d3e2f3f46594e40a653fa1
   }
 ];
 
