@@ -58,6 +58,10 @@
     "react-popper": "^2.3.0",
     "react-resizable-panels": "^2.1.3",
     "react-router-dom": "^6.26.2",
+<<<<<<< HEAD
+=======
+    "react-tsparticles": "^2.12.2",
+>>>>>>> 55cf3668db6514f707d3e2f3f46594e40a653fa1
     "recharts": "^2.12.7",
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.5.2",

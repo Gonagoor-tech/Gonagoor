@@ -44,20 +44,31 @@ const PatentsPage: React.FC = () => {
 
   const allRecentPatents = [
     {
+<<<<<<< HEAD
       title: 'Space debris detection modelusing LIDAR',
       patentNumber: '202541065052',
+=======
+      title: 'Efficient Management of Social Networking Principles for Dynamic Application Network Clustering for Effective Governance',
+      patentNumber: 'TEMP/E-1/28817/2025-CHE',
+>>>>>>> 55cf3668db6514f707d3e2f3f46594e40a653fa1
       status: 'Published',
       date: '2025',
       category: 'Aerospace'
     },
     {
+<<<<<<< HEAD
       title: 'Mini Satellite For Weather Monitoring & Location Tracking using LoRa',
       patentNumber: '202541058670',
+=======
+      title: 'Replication Factors in CubeSats as a Replacement for Larger Satellites',
+      patentNumber: 'TEMP/E-1/31817/2025-CHE',
+>>>>>>> 55cf3668db6514f707d3e2f3f46594e40a653fa1
       status: 'Published',
       date: '2025',
       category: 'Aerospace'
     },
     {
+<<<<<<< HEAD
       title:'Self-Guided Aerial Glider for Passive Flight and Real-Time Navigation',
       patentNumber: '202541058671',
       status: 'Published',
@@ -165,12 +176,17 @@ const PatentsPage: React.FC = () => {
     {
       title: 'Structural Testing Methodology for Long Operational CubeSat Programs',
       patentNumber: '202541031205',
+=======
+      title:'Structural Testing Methodology for Long Operational CubeSat Programs',
+      patentNumber: 'TEMP/E-1/32321/2025-CHE',
+>>>>>>> 55cf3668db6514f707d3e2f3f46594e40a653fa1
       status: 'Published',
       date: '2025',
       category: 'Aerospace'
     },
     {
       title: 'Removal of External Memory and Expansion of Complete Memory as a Hash Map of Registers Within the CPU',
+<<<<<<< HEAD
       patentNumber: '202541031207',
       status: 'Published',
       date: '2025',
@@ -179,16 +195,76 @@ const PatentsPage: React.FC = () => {
     {
       title: 'Replication Factors in CubeSats as a Replacement for Larger Satellites ',
       patentNumber: '202541028395',
+=======
+      patentNumber: 'TEMP/E-1/33498/2025-CHE',
+      status: 'Published',
+      date: '2025',
+      category: 'Software'
+    },
+    {
+      title: 'Predictive Garbage Collector in programming languages',
+      patentNumber: 'TEMP/E-1/33526/2025-CHE',
+      status: 'Published',
+      date: '2025',
+      category: 'Software'
+    },
+    {
+      title: 'Nozzle Design Changes for Enhanced Thrust Vectoring in Jet Engines',
+      patentNumber: 'TEMP/E-1/40035/2025-CHE',
+>>>>>>> 55cf3668db6514f707d3e2f3f46594e40a653fa1
       status: 'Published',
       date: '2025',
       category: 'Aerospace'
     },
     {
+<<<<<<< HEAD
       title: 'Efficient Management of Social Networking Principles for Dynamic Application Network Clustering for Effective Governance',
       patentNumber: '202541027551',
       status: 'Published',
       date: '2025',
       category: 'Vasudeva Kutumbakam'
+=======
+      title:'Development of Electronics and Subsystems for Deep Space Exploration Pro',
+      patentNumber: 'TEMP/E-1/40060/2025-CHE',
+      status: 'Published',
+      date: '2025',
+      category: 'Aerospace'
+    },
+    {
+      title: 'Derivation of Vector Mathematics for Intelligence Based on Permutations ',
+      patentNumber: 'TEMP/E-1/52173/2025-CHE',
+      status: 'Published',
+      date: '2025',
+      category: 'Mathamatics'
+    },
+    {
+      title: 'Development of nano nozzles for rocket engines for deep space exploration',
+      patentNumber: 'TEMP/E-1/52192/2025-CHE',
+      status: 'Published',
+      date: '2025',
+      category: 'Aerospace'
+    },
+    {
+      title: 'Alternate to Attention-Based Layers Using Language Principles in Sanskrit for Enhanced Natural Language Processing Models',
+      patentNumber: 'TEMP/E-1/52467/2025-CHE',
+      status: 'Published',
+      date: '2025',
+      category: 'AI & ML'
+    },
+    {
+      title:'Conversion of Sanskrit Tokens into Vectors Based on the Grammarian Principles by Panini and Sound Knowledge from Maheshwari Sutrani',
+      patentNumber: 'TEMP/E-1/52471/2025-CHE',
+      status: 'Published',
+      date: '2025',
+      category: 'AI & ML'
+    },
+    {
+      title: 'Design of Mathematical Framework for a Quantum Computer Proving Simultaneous Position and Velocity of Quantam Physics',
+      patentNumber: 'TEMP/E-1/52477/2025-CHE',
+      status: 'Published',
+      date: '2025',
+      category: 'Quantum'
+>>>>>>> 55cf3668db6514f707d3e2f3f46594e40a653fa1
     }
   ];
 
@@ -216,7 +292,10 @@ const PatentsPage: React.FC = () => {
               </p>
             </div>
           </div>
+<<<<<<< HEAD
           
+=======
+>>>>>>> 55cf3668db6514f707d3e2f3f46594e40a653fa1
         </section>
 
         {/* Patent Statistics */}
@@ -245,6 +324,7 @@ const PatentsPage: React.FC = () => {
               })}
             </div>
           </div>
+<<<<<<< HEAD
           <div className="text-center mt-8">
               <a
                 href="\Images\patent-portfolio.pdf"
@@ -254,6 +334,8 @@ const PatentsPage: React.FC = () => {
                 Download Full Patent Portfolio (PDF)
               </a>
             </div>
+=======
+>>>>>>> 55cf3668db6514f707d3e2f3f46594e40a653fa1
         </section>
 
         {/* Patent Categories */}
@@ -337,7 +419,11 @@ const PatentsPage: React.FC = () => {
                 </div>
               ))}
             </div>
+<<<<<<< HEAD
               
+=======
+
+>>>>>>> 55cf3668db6514f707d3e2f3f46594e40a653fa1
             {/* "See More/Show Less" Button */}
             {allRecentPatents.length > initialPatentCount && (
               <div className="text-center mt-10">
@@ -348,9 +434,13 @@ const PatentsPage: React.FC = () => {
                   {showAllPatents ? 'Show Less' : 'See More Patents'}
                 </button>
               </div>
+<<<<<<< HEAD
               
             )}
             
+=======
+            )}
+>>>>>>> 55cf3668db6514f707d3e2f3f46594e40a653fa1
           </div>
         </section>
       </div>
