@@ -40,7 +40,7 @@ const coreTeam = [
     isLeader: true
   },
   {
-    name: "Mikkin",
+    name: "Mikkin K M",
     role: "Nirvaahak - Akendra Kriya",
     description: "Specializes in DevOps, ensuring applications scale efficiently to desired limits.",
     socialLinks: {
