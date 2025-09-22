@@ -1,0 +1,48 @@
+
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#4F46E5" stroke-width="0.5" stroke-opacity="0.2"/>
+    </pattern>
+    
+    <!-- Sketch-style patterns -->
+    <pattern id="sketch-dots" width="60" height="60" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1" fill="#4F46E5" fill-opacity="0.3" />
+      <circle cx="30" cy="30" r="1" fill="#4F46E5" fill-opacity="0.3" />
+      <circle cx="50" cy="50" r="1" fill="#4F46E5" fill-opacity="0.3" />
+      <circle cx="50" cy="10" r="1" fill="#4F46E5" fill-opacity="0.3" />
+      <circle cx="10" cy="50" r="1" fill="#4F46E5" fill-opacity="0.3" />
+    </pattern>
+    
+    <pattern id="sketch-lines" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M10,10 Q30,30 50,10 T90,10" fill="none" stroke="#4F46E5" stroke-width="0.5" stroke-opacity="0.2" />
+      <path d="M10,50 Q30,70 50,50 T90,50" fill="none" stroke="#4F46E5" stroke-width="0.5" stroke-opacity="0.2" />
+      <path d="M10,90 Q30,110 50,90 T90,90" fill="none" stroke="#4F46E5" stroke-width="0.5" stroke-opacity="0.2" />
+    </pattern>
+  </defs>
+  
+  <!-- Base grid pattern -->
+  <rect width="1200" height="800" fill="url(#grid)" />
+  
+  <!-- Sketch elements -->
+  <rect width="1200" height="800" fill="url(#sketch-dots)" opacity="0.6" />
+  <rect width="1200" height="800" fill="url(#sketch-lines)" opacity="0.4" />
+  
+  <!-- Abstract tech shapes -->
+  <circle cx="300" cy="200" r="100" fill="none" stroke="#FFA500" stroke-opacity="0.1" stroke-width="2" />
+  <circle cx="900" cy="600" r="150" fill="none" stroke="#4F46E5" stroke-opacity="0.1" stroke-width="2" />
+  
+  <!-- Connecting lines -->
+  <path d="M200,200 L400,400 L600,300 L800,500 L1000,400" fill="none" stroke="#4F46E5" stroke-opacity="0.1" stroke-width="2" stroke-dasharray="5,5" />
+  <path d="M100,300 L300,500 L500,400 L700,600 L900,500" fill="none" stroke="#FFA500" stroke-opacity="0.08" stroke-width="1.5" stroke-dasharray="4,6" />
+  
+  <!-- Abstract circuit-like elements -->
+  <rect x="400" y="100" width="200" height="100" rx="10" ry="10" fill="none" stroke="#4F46E5" stroke-opacity="0.15" stroke-width="1" />
+  <rect x="700" y="300" width="150" height="80" rx="10" ry="10" fill="none" stroke="#4F46E5" stroke-opacity="0.15" stroke-width="1" />
+  <path d="M500,100 L500,50 L800,50 L800,300" fill="none" stroke="#4F46E5" stroke-opacity="0.1" stroke-width="1" />
+  
+  <!-- Blueprint-style dimensions -->
+  <line x1="100" y1="700" x2="300" y2="700" stroke="#4F46E5" stroke-opacity="0.2" stroke-width="0.5" />
+  <line x1="100" y1="695" x2="100" y2="705" stroke="#4F46E5" stroke-opacity="0.2" stroke-width="0.5" />
+  <line x1="300" y1="695" x2="300" y2="705" stroke="#4F46E5" stroke-opacity="0.2" stroke-width="0.5" />
+</svg>
