@@ -144,15 +144,16 @@ const internsTeam = [
     imageSrc: "/Team/Lavanya.jpg"
   },
   {
-    name: "Ananth Athreya",
-    role: "Web Development Intern",
-    description: "Works on integrating backend services with frontend interfaces to deliver robust web solutions.",
+    name: "Omer",
+    role: "Nirvaahak, RTL Engineer",
+    description: "Omer develops and validates RTL code for digital circuits, translating specifications into synthesizable logic, performing simulation and debug, and optimizing for silicon successorks on integrating backend services with frontend interfaces to deliver robust web solutions.",
     socialLinks: {
-      linkedin: "https://www.linkedin.com/in/ananth-m-athreya-963262287/"
+      linkedin: "https://www.linkedin.com/in/mhdomer/"
     },
-    imageSrc: "/Team/Ananth.jpg"
+    imageSrc: "/Team/omer.jpg"
   },
   {
+    
     name: "Vijay Vittal",
     role: "Electronics Design Intern",
     description: "Assists in designing and testing electronic circuits and embedded systems for innovative projects.",
