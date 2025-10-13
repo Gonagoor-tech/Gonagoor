@@ -106,7 +106,7 @@ const coreTeam = [
   {
     name: "Sowrav",
     role: "Nirvaahak - Akendra Kriya",
-    description: "Designs and verifies integrated circuits at the transistor level for high-performance electronic systems.",
+    description: "Designs and verifies integrated circuits at the RTL level for high-performance electronic systems.",
     socialLinks: {
       linkedin: "https://www.linkedin.com/in/sowravraon/"
     },
@@ -146,14 +146,14 @@ const internsTeam = [
   {
     name: "Omer",
     role: "Nirvaahak, RTL Engineer",
-    description: "Omer develops and validates RTL code for digital circuits, translating specifications into synthesizable logic, performing simulation and debug, and optimizing for silicon successorks on integrating backend services with frontend interfaces to deliver robust web solutions.",
+    description: "Develops and validates RTL code for digital circuits, translating specifications into synthesizable logic, performing simulation and debug.",
     socialLinks: {
       linkedin: "https://www.linkedin.com/in/mhdomer/"
     },
     imageSrc: "/Team/omer.jpg"
   },
   {
-    
+
     name: "Vijay Vittal",
     role: "Electronics Design Intern",
     description: "Assists in designing and testing electronic circuits and embedded systems for innovative projects.",
