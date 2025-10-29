@@ -63,7 +63,7 @@ const coreTeam = [
     role: "Mukhya Nirvaahak - Jana Sneha Pariyavaran",
     description: "2+ years of experience in project management & administration, driving projects forward with strong organizational skills.",
     socialLinks: {
-      linkedin: " "
+      linkedin: "https://www.linkedin.com/in/nirupama-ms-53ba36385?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
     },
     imageSrc: "/Team/Nirupama.jpg"
   },
@@ -200,6 +200,13 @@ const advisoryTeam = [
     description: "A unique blend of administrative and software development experience, driving processes for beneficial outcomes.",
     socialLinks: { linkedin: "https://www.linkedin.com/in/susheela-s/" },
     imageSrc: "/Team/Susheela.jpg"
+  },
+  {
+    name: "Ganashree S",
+    role: "Advisory Board Member",
+    description: "A unique blend of administrative and software development experience, driving processes for beneficial outcomes.",
+    socialLinks: { linkedin: "https://www.linkedin.com/in/ganashree/" },
+    imageSrc: "/Team/ganashree.jpg"
   },
   {
     name: "Gowreesh Prabhu",
