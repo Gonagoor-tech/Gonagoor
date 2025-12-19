@@ -30,11 +30,63 @@ const items = [
   { id: 8, title: "InSpace validated design of satellites", img: `${import.meta.env.BASE_URL}Images/inspace.jpg`, desc: "Our satellite design successfully passed InSpace validation, demonstrating reliability and readiness for space applications." },
   { id: 9, title: "South Park Commons Demo Night Finalists 2025", img: `${import.meta.env.BASE_URL}Images/south.jpg`, desc: "Selected as finalists at the South Park Commons Demo Night 2025 for breakthrough technology demonstration." },
   { id: 10, title: "2400°C temperature on off-the-shelf aluminium — a world record", img: `${import.meta.env.BASE_URL}Images/2000.jpg`, desc: "Achieved a world-record 2400°C temperature endurance using standard aluminium through proprietary engineering and thermal R&D." },
+  { id: 11, title: "Sudarshana Semiconductors is officially listed as a DLI Beneficiary!", img: `${import.meta.env.BASE_URL}Images/DLI.jpg.jpeg`, desc: "A proud milestone in our journey of empowering India's semiconductor future. This achievement is the result of relentless dedication by Chirag S Rao, Prashanth Raghu, Md Omer, Rahulgouda, and Sowrav who were the minds shaping nextgen chip innovation in India." },
+  { id:12, title: "A proud moment for Sudarshana Semiconductors", img: `${import.meta.env.BASE_URL}Images/dpiit.jpg.jpeg`, desc: "We are officially recognized as a DPIIT-registered Startup under the Technology Hardware & Semiconductor sector." },
+ {
+  id: 13,
+  img: `${import.meta.env.BASE_URL}Images/guruprasad.jpeg`,
+  title: "Catalyzing linguistic precision through a profound engagement",
+  desc: "Honoured to connect with Dr. Shri Guru Prasad Avaru and the Kanaada Phonetics team, exploring their work on Indic language keyboards and the Tulu Ramayana digitization. Excited about ASIC-driven multilingual computing—a fusion of linguistics, cognitive science, and hardware innovation for inclusive digital literacy."
+},
+{
+  id: 14,
+  img: `${import.meta.env.BASE_URL}Images/ksu.jpeg`,
+  title: "Advancing the Sanskrit Renaissance Through Innovation",
+  desc: "Honoured to engage with Karnataka Sanskrit University under Dr. Ahalya, sharing our work on Sanskrit’s mathematical precision and witnessing their appreciation. Excited as we move toward an MoU to begin developing a transformative language model.Engaged with Karnataka Sanskrit University under Dr. Ahalya to explore Sanskrit-based language model collaboration."
+},
+{
+  id: 15,
+  img: `${import.meta.env.BASE_URL}Images/wipro.jpeg`,
+  title: "Meeting with Shri Sundararaman Ganapathiraman, Wipro Research",
+  desc: "Honoured to meet Shri Sundararaman Ganapathiraman, Chief Scientist at Wipro Research, and discuss the vision of Sudarshana Semiconductors. Grateful for his guidance and privileged to receive his book EmBossed Imprints."
+},
+{
+  id: 16,
+  img: `${import.meta.env.BASE_URL}Images/kdm.jpg.jpeg`,
+  title: "Engaging at KDEM Beyond Bengaluru Tech Summit",
+  desc: "Had an inspiring experience at KDEM’s Beyond Bengaluru Tech Summit, Mysuru, engaging with VCs, mentors, and industry peers. Excited for upcoming deep-tech initiatives from Gonagoor Technology Solutions. Grateful to KDEM, KTECH, Startup Karnataka, and all stakeholders for an outstanding summit!"
+},
+{
+  id: 17,
+  img: `${import.meta.env.BASE_URL}Images/drivetech.jpeg`,
+  title: "Driving Deep-Tech Innovation at Techceleration 2025",
+  desc: "Delighted to have Mr. Prashanth Raghu, Founder & CEO of Vayuvya Defence, Sudarshana Semiconductors, and Gonagoor Technology Solutions, as a speaker at Techceleration 2025, Belagavi. An inspiring experience witnessing insights driving India’s deep-tech and defence innovation forward."
+},
+{
+  id: 18,
+  img: `${import.meta.env.BASE_URL}Images/iiscmeeting.jpeg`,
+  title: "Participating in IISc CeNSE Nanoelectronics Roadshow 2025",
+  desc: "Excited to represent Gonagoor Technology Solutions at the IISc CeNSE Nanoelectronics Roadshow on March 27, 2025, alongside our Founder Prashanth Raghu, Head of Growth Chirag S Rao, and intern Sowrav Rao. Looking forward to engaging with industry leaders and advancing the future of nanoelectronics."
+},
+{
+  id: 19,
+  img: `${import.meta.env.BASE_URL}Images/iiscevent.jpeg`,
+  title: "Productive Meeting at IISc for Vishwakarma Processor Collaboration",
+  desc: "Had a wonderful day at IISc, exploring joint research across six fields with support to fabricate our first processor Vishwakarma - RISC-VDF at the CeNSE facility. Grateful to Kalpana Subbaramappa and the team for their guidance and collaboration—looking forward to impactful results."
+},
+{
+  id: 20,
+  img: `${import.meta.env.BASE_URL}Images/tessolve.jpeg`,
+  title: "Strategic Meeting at Tessolve on AI Accelerator Chip",
+  desc: "Today, our team — Mohammed Omer, Sowrav, Chirag S. Rao, and Prashanth Raghu — visited Tessolve to present our AI accelerator chip architecture and explore a potential strategic partnership. Grateful to Mr. Sarfraz for facilitating the meeting and supporting our mission to build high-performance, energy-efficient AI silicon."
+},
+
 ];
 
 const Achievements: React.FC = () => {
   const loopItems = [...items, ...items];
   const trackRef = useRef<HTMLDivElement | null>(null);
+
   const listRef = useRef<HTMLDivElement | null>(null);
   const animationState = useRef({
     rafId: 0 as number | null,
@@ -143,10 +195,11 @@ const Achievements: React.FC = () => {
                       src={item.img}
                       alt={item.title}
                       className={
-                        item.id === 6 || item.id === 7
-                          ? "max-w-full max-h-full object-contain p-2 transition-transform duration-200"
-                          : "w-full h-full object-cover transition-transform duration-200 group-hover:scale-105"
-                      }
+  item.id === 6 || item.id === 7 || item.id === 12 || item.id === 16
+    ? "max-w-full max-h-full object-contain p-2 transition-transform duration-200"
+    : "w-full h-full object-cover transition-transform duration-200 group-hover:scale-105"
+}
+
                       onError={(e) => {
                         const img = e.currentTarget as HTMLImageElement;
                         console.warn("Achievement image failed to load:", img.src);
