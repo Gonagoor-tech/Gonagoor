@@ -20,9 +20,7 @@ import AerospaceDetailPage from "./pages/AerospaceDetailPage";
 import AIDetailPage from "./pages/AIDetailPage";
 import SoftwareDetailPage from "./pages/SoftwareDetailPage";
 import NanogetX1Page from "./pages/NanogetX1Page";
-import SkycubePage from "./pages/SkycubePage";
-import VayuDroidPage from "./pages/VayuDroidPage";
-import SpinoffsPage from "./pages/SpinoffsPage";
+import SkycubePage from "./pages/SkycubePage";import VayuDroidPage from "./pages/VayuDroidPage";
 import MobilityPage from "./pages/MobilityPage";
 import HealthcarePage from "./pages/HealthcarePage";
 import PatentsPage from "./pages/PatentsPage";
@@ -54,9 +52,7 @@ const App = () => (
           <Route path="/software/details" element={<SoftwareDetailPage />} />
 
           <Route path="/mobility" element={<MobilityPage />} />
-          <Route path="/healthcare" element={<HealthcarePage />} />
-          <Route path="/vision" element={<VisionPage />} />
-          <Route path="/spinoffs" element={<SpinoffsPage />} />
+          <Route path="/healthcare" element={<HealthcarePage />} />          <Route path="/vision" element={<VisionPage />} />
           <Route path="/patents" element={<PatentsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/careers" element={<CareerPage />} />
@@ -66,5 +62,6 @@ const App = () => (
     </TooltipProvider>
   </QueryClientProvider>
 );
+
 
 export default App;
